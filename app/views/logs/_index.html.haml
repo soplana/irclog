@@ -1,0 +1,38 @@
+.pankuzu
+  %a.pjax{href: root_path} Top
+
+.c_title
+  = "#{params[:year]}-#{params[:month]}"
+.calender
+  .shadow
+
+
+    .header
+      .block.left
+        sun
+      .block.center
+        mon
+      .block.center
+        tue
+      .block.center
+        wed
+      .block.center
+        thu
+      .block.center
+        fri
+      .block.right
+        sat
+    .both
+    .body
+      - month_for_week_each(params[:year].to_i, params[:month].to_i) do |weeks|
+        - weeks.each_with_index do |day, i| 
+          - case i
+          - when 0
+            %a.pjax.block.left{href: day_path(day)}= day.nil? ? "" : day.day
+          - when 6
+            %a.pjax.block.right{href: day_path(day)}= day.nil? ? "" : day.day
+          - else
+            %a.pjax.block.center{href: day_path(day)}= day.nil? ? "" : day.day
+
+    .both
+

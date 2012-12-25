@@ -1,0 +1,23 @@
+.pankuzu
+  %a.pjax{href: root_path} Top
+  %span >
+  %a.pjax{href: logs_path}= "#{params[:year]}-#{params[:month]}"
+
+
+#logs
+  - @logs.each do |log|
+    .row  
+      .b.name
+        = log.name
+      .b.text
+        = log.text
+      .c.time
+        = log.time[0..15]
+      .both
+
+.pankuzu
+  %a.pjax{href: root_path} Top
+  %span >
+  %a.pjax{href: logs_path}= "#{params[:year]}-#{params[:month]}"
+
+

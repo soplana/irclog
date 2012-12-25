@@ -1,0 +1,23 @@
+!!!
+%html{:lang => "ja"}
+  %head
+    %title logs
+    %meta{:charset => "UTF-8"}
+    = csrf_meta_tags
+
+    = stylesheet_link_tag "logs.css"
+    = javascript_include_tag "jquery.js" 
+    = javascript_include_tag "jquery.pjax.js" 
+    = javascript_include_tag "logs.js"
+    / number font
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Istok+Web"
+    
+    / title font
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Carrois+Gothic|Scada|Archivo+Narrow"
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Allerta"
+
+    %META{:CONTENT => "NOINDEX,NOFOLLOW", :NAME => "ROBOTS"}/
+    
+  %body
+    #content
+      = yield
